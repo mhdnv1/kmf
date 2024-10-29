@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  resize: none;
+  font-family: "Gilroy";
+}
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1128px;
+  width: 100%;
+}
+@font-face {
+  font-family: 'Gilroy'; 
+  src: url('../font/Gilroy-FREE/Gilroy-ExtraBold.otf') format('otf'), 
+       url('../font/Gilroy-FREE/Gilroy-Light.otf') format('otf');
+  font-weight: normal; 
+  font-style: italic; 
+}
+@mixin text($fw, $fs, $lh, $c) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $c;
+  font-family: "Gilroy"
+}
+.section-title {
+  @include text(700, 44px, 52px, transparent);
+  background: linear-gradient(258.75deg, #2d1178 25.04%, #db2d8f 77.78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 40px;
+  @media screen and (max-width: 900px) {
+    @include text(700, 24px, 32px, transparent);
+    text-align: start;
+    margin-bottom: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px); /* Подъем слайда */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(20px); /* Опускание слайда */
+  }
+}
+
+
+@import "./header.scss";
+@import "./banner-carusel.scss";
+@import "./insights.scss";
+@import "./footer.scss";
+@import "./news.scss";
+@import "./education.scss";
+@import './business.scss';
+@import './stories.scss'

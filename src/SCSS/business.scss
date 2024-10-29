@@ -1,0 +1,159 @@
+.business {
+  @media screen and (max-width: 900px) {
+    padding: 0 0 0 16px;
+    .container {
+      padding: 0;
+    }
+  }
+  .slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    @media screen and (max-width: 900px) {
+      overflow: auto;
+      column-gap: 24px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    @media screen and (max-width: 900px) {
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &-card {
+      width: calc(360px - 24px);
+      min-width: calc(360px - 24px);
+      flex: 0 0 auto;
+      cursor: pointer;
+      @media screen and (max-width: 900px) {
+        width: calc(240px);
+        min-width: calc(240px);
+      }
+    }
+    &-top {
+      position: relative;
+      overflow: hidden;
+      &__active {
+        display: none;
+        width: 436px;
+        height: 436px;
+        background: #fa9397;
+        border-radius: 50%;
+        position: absolute;
+        top: -19px;
+        left: -48px;
+        @media screen and (max-width: 900px) {
+          top: -90px;
+          left: -90px;
+        }
+        p a {
+          @include text(600, 16px, 436px, #fff);
+          text-align: center;
+          display: block;
+        }
+      }
+      img {
+        width: 100%;
+        height: 398px;
+        object-fit: cover;
+        border-radius: 24px;
+        @media screen and (max-width: 900px) {
+          height: 260px;
+        }
+      }
+      &:hover .slide-top__active {
+        display: block;
+        animation: fadeIn 0.5s forwards; 
+      }
+    }
+    &-bottom {
+      &__title {
+        @include text(700, 24px, 32px, #32334c);
+        padding: 16px 0 12px;
+      }
+      &__address {
+        @include text(400, 16px, 22px, #32334c);
+        padding-bottom: 12px;
+      }
+      &__description {
+        @include text(600, 16px, 22px, #32334c);
+      }
+    }
+  }
+  .slider-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+    button {
+      background: #fff0f5;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .prev {
+      left: 10px;
+      margin-right: 16px;
+    }
+
+    .next {
+      right: 10px;
+      margin-left: 16px;
+    }
+
+    .pagination {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    .pagination button {
+      background: #32334c;
+      border: none;
+      border-radius: 50%; /* Круглая форма */
+      width: 4px;
+      height: 4px;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: #ccc 0.3s;
+    }
+
+    .pagination button.active {
+      background-image: url("../images/business/pagenationjpg.jpg");
+      background-position: center;
+      border-radius: 50%;
+      padding: 8px;
+      width: 24px;
+      height: 24px;
+      margin: 0 4px;
+      border: 1px solid #9d097c;
+      cursor: pointer;
+      transition: #ccc 0.3s;
+      position: relative;
+    }
+    .pagination button:hover {
+      background: #aaa; /* Цвет при наведении */
+    }
+  }
+}

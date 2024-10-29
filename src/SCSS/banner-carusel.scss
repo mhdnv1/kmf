@@ -1,0 +1,184 @@
+.banner-carusel {
+  height: 742px;
+  background: #c6d9dd;
+  border-radius: 40px;
+  @media screen and (max-width: 900px) {
+    height: auto;
+    padding-bottom: 36px;
+    .container{
+      padding: 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: 900px) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__left {
+    width: 55%;
+    background: #c6d9dd;
+    display: inline-block;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      padding-bottom: 36px;
+      border-bottom-right-radius: 40px;
+      padding: 0 16px;
+    }
+    &__content {
+      padding-top: 167px;
+      @media screen and (max-width: 900px) {
+       padding-top: 64px;
+      }
+    }
+  }
+  &__right {
+    padding: 0;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    background: #c6d9dd;
+    display: inline-block;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      position: relative;
+      border-top-left-radius: 40px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+      object-fit: cover;
+      @media screen and (max-width: 900px) {
+        height: 314px;
+        border-radius: 40px;
+      }
+    }
+  }
+  &__title {
+    @include text(600, 64px, 80px, #32334c);
+    @media screen and (max-width: 900px) {
+      @include text(600, 40px, 52px, #32334c);
+    }
+  }
+  &__text {
+    padding-top: 12px;
+    @include text(400, 24px, 32px, #32334c);
+  }
+  &__btn {
+    margin-top: 24px;
+    padding: 30.5px 77px;
+    @include text(600, 16px, 19.09px, #9d097c);
+    border-radius: 32px;
+    border: 1px solid #9d097c;
+    background: transparent;
+    @media screen and (max-width: 900px) {
+     width: 100%;
+    }
+  }
+}
+
+.slider2 {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .slides2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide2 {
+    min-width: 100%;
+  }
+  .prev2 {
+    left: 10px;
+    margin-right: 8px;
+    @media screen and (max-width:900px){
+      display: none;
+   }
+  }
+  .next2 {
+    right: 10px;
+    margin-right: 16px;
+    @media screen and (max-width:900px){
+      display: none;
+   }
+  }
+  .slider-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 999;
+    bottom: 32px;
+    left: 23%;
+    @media screen and (max-width:900px){
+      left: 0;
+   }
+    button {
+      background: #fff0f5;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .prev {
+      left: 10px;
+      margin-right: 16px;
+    }
+  
+    .pagination2 {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      @media screen and (max-width:900px){
+          position: absolute;
+          top: -390px;
+          left: 150px;
+          z-index: 999;
+      }
+    }
+  
+    .pagination2 button {
+      background: #32334c;
+      border: none;
+      border-radius: 50%; /* Круглая форма */
+      width: 4px;
+      height: 4px;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: #ccc 0.3s;
+    }
+  
+    .pagination2 button.active {
+      background-image: url("../images/business/pagenationjpg.jpg");
+      background-position: center;
+      border-radius: 50%;
+      padding: 8px;
+      width: 24px;
+      height: 24px;
+      margin: 0 4px;
+      border: 1px solid #9d097c;
+      cursor: pointer;
+      transition: #ccc 0.3s;
+      position: relative;
+    }
+    .pagination2 button:hover {
+      background: #aaa; /* Цвет при наведении */
+    }
+  }
+}
+

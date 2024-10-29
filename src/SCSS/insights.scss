@@ -1,0 +1,30 @@
+.insights {
+  padding: 144px 0 234px;
+  text-align: center;
+  @media screen and (max-width: 900px) {
+    padding: 120px 0;
+  }
+  &-text {
+    @include text(500, 32px, 48px, transparent);
+    background: linear-gradient(258.75deg, #2d1178 25.04%, #db2d8f 77.78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    margin: 0 auto;
+    margin-bottom: 42px;
+    max-width: 896px;
+    width: 100%;
+    @media screen and (max-width: 900px) {
+        margin-bottom: 24px;
+        @include text(500, 24px, 32px, transparent);
+      }
+  }
+  button{
+    margin-top: 24px;
+    padding: 30.5px 77px;
+    @include text(600, 16px, 19.09px, #9d097c);
+    border-radius: 32px;
+    border: 1px solid #9d097c;
+    background: transparent;
+  }
+}
